@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../styles/Header.css';
-import Navbar from './Navbar'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
