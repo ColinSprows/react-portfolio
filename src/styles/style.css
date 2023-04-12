@@ -1,0 +1,10 @@
+/* Portfolio CSS */
+
+/* .image-container {
+    position: relative;
+    display: inline-block;
+} */
+
+img:hover {
+    opacity: .5;
+}

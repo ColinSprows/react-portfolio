@@ -5,7 +5,7 @@ import Portfolio from '../pages/Portfolio';
 import Resume from '../pages/Resume';
 
 export default function Body() {
-  const [currentPage, setCurrentPage] = useState(window.location.hash);
+  const [currentPage, setCurrentPage] = useState('#about');
 
   useEffect(() => {
     const handleHashChange = () => {
