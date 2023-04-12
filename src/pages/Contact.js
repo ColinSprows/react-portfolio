@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Card, Typography, TextField } from '@mui/material';
+import { Card, Typography, TextField, Button } from '@mui/material';
+import SendIcon from '@mui/icons-material/Send';
 
 function Contact() {
   // Here we set two state variables for firstName and lastName using `useState`
@@ -55,36 +56,47 @@ function Contact() {
           maxWidth: "500px",
         }}
       >
-        <input
+        <TextField 
+          id="outlined-basic" 
+          label="Name" 
+          variant="outlined" 
           value={name}
           name="name"
           onChange={handleInputChange}
           type="text"
           placeholder="Name"
+          sx={{marginBottom: "24px"}}
         />
-        <input
+        <TextField 
+          id="outlined-basic" 
+          label="Email" 
+          variant="outlined" 
           value={email}
           name="email"
           onChange={handleInputChange}
           type="email"
           placeholder="Email"
+          sx={{marginBottom: "24px"}}
         />
-        <textarea
+         <TextField
+          id="outlined-multiline-static"
+          label="Message"
+          multiline
+          rows={4}
           value={message}
           name="message"
           onChange={handleInputChange}
           type="text"
           placeholder="Message"
-          rows="5"
-          style={{ fontFamily: "arial" }}
+          sx={{marginBottom: "24px"}}
         />
-        <button type="button" onClick={handleFormSubmit}>
+        <Button variant="contained" endIcon={<SendIcon />} type="button" onClick={handleFormSubmit} sx={{marginBottom: "24px"}}>
           Submit
-        </button>
+        </Button>
       </form>
       {errorMessage && (
         <div>
-          <p className="error-text">{errorMessage}</p>
+          <Typography className="error-text">{errorMessage}</Typography>
         </div>
       )}
       </Card>
