@@ -20,8 +20,8 @@ export default function Footer() {
         }}
     >
       <BottomNavigation sx={{backgroundColor: "transparent"}}>
-        <BottomNavigationAction icon={<GitHubIcon />} />
-        <BottomNavigationAction icon={<LinkedInIcon />} />
+        <BottomNavigationAction icon={<GitHubIcon />} href="https://github.com/ColinSprows" />
+        <BottomNavigationAction icon={<LinkedInIcon />} href="https://github.com/ColinSprows"/>
       </BottomNavigation>
     </Box>
   );
