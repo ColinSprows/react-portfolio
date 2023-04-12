@@ -7,18 +7,28 @@ import '../styles/style.css';
 
 const Portfolio = () => {
   return (
-    <div style={{ 
+    <div
+      style={{ 
       display: "flex", 
       flexWrap: "wrap",
       justifyContent: "space-evenly",
       alignItems: "space-evenly",
-      marginTop: "12px"
+      marginTop: "24px"
       }}
     >
-      <img src={Image1} alt="Image 1" style={{ width: "40%", height: "40%" }}/>
-      <img src={Image2} alt="Image 2" style={{ width: "40%", height: "40%" }}/>
-      <img src={Image3} alt="Image 3" style={{ width: "40%", height: "40%", marginTop: "12px" }}/>
-      <img src={Image4} alt="Image 4" style={{ width: "40%", height: "40%", marginTop: "12px" }}/>
+      <a href="https://github.com/ColinSprows" className="a">
+        <img src={Image1} alt="Image 1" style={{ width: "100%", height: "100%" }}/>
+      </a>
+      <a href="https://github.com/ColinSprows" className="a">
+        <img src={Image2} alt="Image 2" style={{ width: "100%", height: "100%" }}/>
+      </a>
+      <a href="https://github.com/ColinSprows" className="a">
+        <img src={Image3} alt="Image 3" style={{ width: "100%", height: "100%", marginTop: "48px" }}/>
+      </a>
+      <a href="https://github.com/ColinSprows" className="a">
+        <img src={Image4} alt="Image 4" style={{ width: "100%", height: "100%", marginTop: "48px" }}/>
+      </a>
+      
     </div>
   )
 }

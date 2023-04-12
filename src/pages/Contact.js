@@ -46,7 +46,7 @@ function Contact() {
   return (
     <div style={{display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", marginTop: "24px"}}>
       <Card sx={{padding: "24px"}}>
-      <Typography sx={{fontSize: "2em", fontWeight: 600}}>Contact</Typography>
+      <Typography sx={{fontSize: "2em", fontWeight: 600, marginBottom: "24px"}}>Contact</Typography>
       <form 
         className="form"
         style={{

@@ -4,11 +4,6 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import About from '../pages/About';
-import Contact from '../pages/Contact';
-import Portfolio from '../pages/Portfolio';
-import Resume from '../pages/Resume';
 import Navigation from './Navigation.js'
 
 export default function Header() {
