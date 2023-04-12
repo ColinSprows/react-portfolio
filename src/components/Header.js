@@ -34,10 +34,10 @@ export default function Header() {
                 textDecoration: 'none',
                 }}
             >
-                LOGO
+                COLIN
             </Typography>
           </Box>
-          <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
