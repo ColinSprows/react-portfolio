@@ -3,27 +3,44 @@ import React, { useState } from 'react';
 
 function Contact() {
   // Here we set two state variables for firstName and lastName using `useState`
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
-    const { name, value } = e.target;
+    const { target } = e;
+    const inputType = target.name;
+    const inputValue = target.value;
 
-    // Ternary statement that will call either setFirstName or setLastName based on what field the user is typing in
-    return name === 'firstName' ? setFirstName(value) : setLastName(value);
+    if (inputType === 'name') {
+        setName(inputValue);
+      } else if (inputType === 'email') {
+        setEmail(inputValue);
+      } else {
+        setMessage(inputValue);
+      }
   };
 
-  const handleFormSubmit = (e) => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    e.preventDefault();
+  const validateEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+  
+  const checkPassword = (input) => {
+    const passw = /^[A-Za-z]\w{7,14}$/;
+    if (input.match(passw)) {
+      return true;
+    }
+    return false;
+  }
 
-    // Alert the user their first and last name, clear the inputs
-    alert(`Hello ${firstName} ${lastName}`);
-    setFirstName('');
-    setLastName('');
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setName('');
+    setEmail('');
+    setMessage('');
+    alert(`Hello ${name}, your message has been recieved`);
   };
 
   return (
@@ -39,18 +56,11 @@ function Contact() {
         }}
       >
         <input
-          value={firstName}
-          name="firstName"
+          value={name}
+          name="name"
           onChange={handleInputChange}
           type="text"
-          placeholder="First Name"
-        />
-        <input
-          value={lastName}
-          name="lastName"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Last Name"
+          placeholder="Name"
         />
         <input
           value={email}

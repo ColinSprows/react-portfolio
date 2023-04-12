@@ -10,8 +10,7 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Portfolio from '../pages/Portfolio';
 import Resume from '../pages/Resume';
-
-const pages = ['About', 'Contact', 'Portfolio', 'Resume'];
+import Navigation from './Navigation.js'
 
 export default function Header() {
   return (
@@ -38,15 +37,7 @@ export default function Header() {
             </Typography>
           </Box>
           <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                href={'#' + page.toLowerCase()}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+                <Navigation/>
           </Box>
         </Toolbar>
       </Container>
