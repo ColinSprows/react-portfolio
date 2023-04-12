@@ -45,7 +45,7 @@ function Contact() {
 
   return (
     <div style={{display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", marginTop: "24px"}}>
-      <Card sx={{padding: "24px"}}>
+      <Card sx={{padding: "24px", backgroundColor: "#f0f7ff"}}>
       <Typography sx={{fontSize: "2em", fontWeight: 600, marginBottom: "24px"}}>Contact</Typography>
       <form 
         className="form"
@@ -65,7 +65,7 @@ function Contact() {
           onChange={handleInputChange}
           type="text"
           placeholder="Name"
-          sx={{marginBottom: "24px"}}
+          sx={{marginBottom: "24px", backgroundColor: "white"}}
         />
         <TextField 
           id="outlined-basic" 
@@ -76,7 +76,7 @@ function Contact() {
           onChange={handleInputChange}
           type="email"
           placeholder="Email"
-          sx={{marginBottom: "24px"}}
+          sx={{marginBottom: "24px", backgroundColor: "white"}}
         />
          <TextField
           id="outlined-multiline-static"
@@ -88,7 +88,7 @@ function Contact() {
           onChange={handleInputChange}
           type="text"
           placeholder="Message"
-          sx={{marginBottom: "24px"}}
+          sx={{marginBottom: "24px", backgroundColor: "white"}}
         />
         <Button variant="contained" endIcon={<SendIcon />} type="button" onClick={handleFormSubmit} sx={{marginBottom: "24px"}}>
           Submit
