@@ -19,7 +19,7 @@ export default function Footer() {
         justifyContent: "center",
         }}
     >
-      <BottomNavigation>
+      <BottomNavigation sx={{backgroundColor: "transparent"}}>
         <BottomNavigationAction icon={<GitHubIcon />} />
         <BottomNavigationAction icon={<LinkedInIcon />} />
       </BottomNavigation>

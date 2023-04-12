@@ -6,6 +6,7 @@ function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
@@ -26,21 +27,19 @@ function Contact() {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
-  
-  const checkPassword = (input) => {
-    const passw = /^[A-Za-z]\w{7,14}$/;
-    if (input.match(passw)) {
-      return true;
-    }
-    return false;
-  }
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+
+    if (!validateEmail(email)) {
+        setErrorMessage('Email is invalid');
+        return;
+    }
+    
     setName('');
     setEmail('');
     setMessage('');
-    alert(`Hello ${name}, your message has been recieved`);
+    setErrorMessage(`Thanks ${name}, your message has been recieved`);
   };
 
   return (
@@ -82,6 +81,11 @@ function Contact() {
           Submit
         </button>
       </form>
+      {errorMessage && (
+        <div>
+          <p className="error-text">{errorMessage}</p>
+        </div>
+      )}
     </div>
   );
 }
