@@ -8,7 +8,7 @@ import Navigation from './Navigation.js'
 
 export default function Header() {
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{borderRadius:2}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -16,7 +16,7 @@ export default function Header() {
                 variant="h6"
                 noWrap
                 component="a"
-                href="/"
+                href="/#about"
                 sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
